@@ -11,104 +11,101 @@ interface TextScrambleProps {
 
 export default function TextScramble({ text, className = '' }: TextScrambleProps) {
   const [output, setOutput] = useState(text);
-  const frameRequest = useRef<number | null>(null);
-  const frame = useRef(0);
-  const queue = useRef<{ from: string; to: string; start: number; end: number; char?: string }[]>([]);
+  const frameRef = useRef<number | null>(null);
+  const previousText = useRef(text);
   
-  const randomChar = () => {
-    return CHARACTERS.charAt(Math.floor(Math.random() * CHARACTERS.length));
-  };
-
-  // Counter to slow down the frame rate
-  const frameSkipCounter = useRef(0);
-  const FRAME_SKIP = 2; // Skip frames to slow down by ~2.5x
-  
-  const update = () => {
-    let complete = 0;
-    let outputText = '';
-    
-    // Only update characters every few frames
-    frameSkipCounter.current = (frameSkipCounter.current + 1) % FRAME_SKIP;
-    const shouldUpdateChars = frameSkipCounter.current === 0;
-    
-    for (let i = 0, n = text.length; i < n; i++) {
-      const current = text[i];
-      
-      // If the current character is already correct, keep it and mark as complete
-      if (i >= queue.current.length || queue.current[i].end <= frame.current) {
-        complete++;
-        outputText += current;
-        continue;
-      }
-      
-      // For characters still animating, show either the intermediate or random character
-      const { to, start, end, char } = queue.current[i];
-      const progress = Math.max(0, Math.min(1, (frame.current - start) / (end - start)));
-      
-      if (progress < 1) {
-        // Show a random character in place of the target character
-        outputText += char || randomChar();
-        // Update the random character less frequently
-        if (shouldUpdateChars) {
-          queue.current[i].char = randomChar();
-        }
-      } else {
-        // Animation complete for this character, show final character
-        outputText += to;
-        complete++;
-      }
-    }
-    
-    setOutput(outputText);
-    
-    if (complete < text.length) {
-      frame.current++;
-      frameRequest.current = requestAnimationFrame(update);
-    }
-  };
+  const randomChar = () => CHARACTERS.charAt(Math.floor(Math.random() * CHARACTERS.length));
 
   useEffect(() => {
-    // Define scramble function inside useEffect to avoid dependency issues
-    const scramble = () => {
-      frame.current = 0;
-      
-      // Reset the queue
-      queue.current = [];
-      
-      // Create a queue item for each character - 2.5x slower
-      for (let i = 0, n = text.length; i < n; i++) {
-        const from = output[i] || '';
-        const to = text[i];
-        const start = Math.floor(Math.random() * 30); // 2.5x slower (was 30)
-        const end = start + Math.floor(Math.random() * 75) + 20; // 2.5x slower (was 60+20)
-        queue.current.push({ from, to, start, end });
-      }
-      
-      // Cancel any existing animation
-      if (frameRequest.current) {
-        cancelAnimationFrame(frameRequest.current);
-      }
-      
-      // Start the animation
-      frameRequest.current = requestAnimationFrame(update);
+    // Check if text has changed
+    const textChanged = previousText.current !== text;
+    // Update previousText ref
+    previousText.current = text;
+    
+    // If text hasn't changed, no need to re-scramble
+    if (!textChanged) {
+      return;
+    }
+    
+    // Initialize with current text for a brief moment
+    setOutput(text);
+    
+    // Do a single scramble animation
+    const startScramble = () => {
+        // Create an array of objects for each character
+        const chars = text.split('').map((char) => ({
+          char,                                      // target character
+          currentChar: randomChar(),                 // current displayed character
+          randomize: true,                           // whether to randomize this character
+          startDelay: Math.floor(Math.random() * 10), // random start delay (shorter)
+          endDelay: Math.floor(Math.random() * 20) + 20 // random end delay (shorter)
+        }));
+        
+        let frameCount = 0;
+        
+        // Animation function
+        const animate = () => {
+          frameCount++;
+          
+          // Calculate output text by processing each character
+          const outputText = chars.map((charInfo) => {
+            // If we've passed the start delay for this character
+            if (frameCount > charInfo.startDelay) {
+              // If we've passed the end delay for this character
+              if (frameCount > charInfo.startDelay + charInfo.endDelay) {
+                charInfo.randomize = false;
+                return charInfo.char; // Show final character
+              }
+              
+              // Still in randomization phase
+              if (charInfo.randomize) {
+                charInfo.currentChar = randomChar();
+                return charInfo.currentChar;
+              }
+            }
+            
+            // Before start delay
+            return charInfo.currentChar;
+          }).join('');
+          
+          // Update display
+          setOutput(outputText);
+          
+          // Check if animation is complete
+          const allDone = chars.every((charInfo) => 
+            frameCount > charInfo.startDelay + charInfo.endDelay
+          );
+          
+          if (allDone) {
+            return;
+          }
+          
+          // Continue animation
+          frameRef.current = requestAnimationFrame(animate);
+        };
+        
+        // Start animation
+        frameRef.current = requestAnimationFrame(animate);
     };
-
-    // Start the animation on mount or when text changes
-    scramble();
     
-    // Set up periodic re-scrambling
-    const interval = setInterval(() => {
-      scramble();
-    }, 17500); // 2.5x slower (was 7000)
+    // Start the scramble animation
+    startScramble();
     
+    // Cleanup function
     return () => {
-      clearInterval(interval);
-      if (frameRequest.current) {
-        cancelAnimationFrame(frameRequest.current);
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
       }
     };
-  }, [text, output]);
-
+  }, [text]); // Only re-run if text changes
+  
+  // Initialize with empty string on first render
+  useEffect(() => {
+    if (output === '') {
+      setOutput(text);
+    }
+  }, [output, text]);
+  
   return (
     <span className={className}>
       {output}

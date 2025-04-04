@@ -2,7 +2,6 @@
 
 // Imports will be added when needed
 import Link from "next/link";
-import TextScramble from "@/components/TextScramble";
 import PatientCounter from "@/components/PatientCounter";
 import { useEffect } from "react";
 
@@ -18,7 +17,7 @@ export default function Home() {
     serviceCards.forEach((card, index) => {
       setTimeout(() => {
         card.classList.add('animate');
-      }, index * 300);
+      }, index * 600); // 2x longer delay (600ms instead of 300ms)
     });
     
     // Create Intersection Observer for animations
@@ -33,7 +32,7 @@ export default function Home() {
           cards.forEach((card, index) => {
             setTimeout(() => {
               card.classList.add('animate');
-            }, index * 300); // 300ms delay between each card
+            }, index * 600); // 600ms delay between each card (2x longer)
           });
         } else {
           // When scrolling away, remove animation classes to reset
@@ -83,15 +82,15 @@ export default function Home() {
         
         {/* Hero Content */}
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pt-16">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 text-shadow-lg">
-            <TextScramble text="Helix Processing" />
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 text-shadow-lg fade-in-1">
+            Helix Processing
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-white mb-8 max-w-3xl mx-auto text-shadow-md">
-            <TextScramble text="Streamlining Care, Empowering Lives." />
+          <p className="text-xl md:text-2xl font-bold text-white mb-8 max-w-3xl mx-auto text-shadow-md fade-in-2">
+            Streamlining Care, Empowering Lives.
           </p>
           
           {/* Patient Counter */}
-          <div className="mb-10">
+          <div className="mb-10 fade-in-3">
             <p className="text-white font-extrabold text-shadow-md">
               <span className="font-mono text-white text-xl">
                 <PatientCounter startValue={432819} />
@@ -100,7 +99,7 @@ export default function Home() {
           </div>
           
           {/* CTA Button */}
-          <div>
+          <div className="fade-in-4">
             <Link 
               href="/services" 
               className="inline-flex items-center px-6 py-3 border border-transparent rounded-full text-base font-extrabold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all duration-200"

@@ -40,13 +40,13 @@ export default function LocationsPage() {
         {/* Content container */}
       
         <div className="max-w-2xl mx-auto text-center mb-12 relative z-10">
-          <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-200">
+          <h1 className="text-4xl font-bold text-white mb-4 fade-in-1">Contact Us</h1>
+          <p className="text-xl text-gray-200 fade-in-2">
             Have questions about our services? Reach out to us directly.
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto bg-indigo-900/40 backdrop-blur-md rounded-xl shadow-lg p-8 border border-white/20 relative z-10">
+        <div className="max-w-xl mx-auto bg-indigo-900/40 backdrop-blur-md rounded-xl shadow-lg p-8 border border-white/20 relative z-10 fade-in-3">
           <form className="space-y-6">
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
               <div>
@@ -93,13 +93,13 @@ export default function LocationsPage() {
             </div>
 
             <div>
-              <label htmlFor="company" className="block text-sm font-medium text-white">
-                Company (Optional)
+              <label htmlFor="subject" className="block text-sm font-medium text-white">
+                Subject
               </label>
               <div className="mt-1">
                 <input
-                  id="company"
-                  name="company"
+                  id="subject"
+                  name="subject"
                   type="text"
                   className="py-3 px-4 block w-full rounded-md bg-white/20 border-indigo-300/30 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 placeholder-white/50"
                 />

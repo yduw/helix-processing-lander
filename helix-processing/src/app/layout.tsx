@@ -19,21 +19,8 @@ export const metadata: Metadata = {
   description: "Healthcare automation services leveraging advanced AI technologies, FDA-compliant medical goods, and DME solutions.",
   // Favicon configuration
   icons: {
-    icon: '/favicon-for-public/web-app-manifest-192x192.png',
-    apple: '/favicon-for-public/web-app-manifest-192x192.png',
-    // Different sizes for various devices
-    other: [
-      {
-        url: '/favicon-for-public/web-app-manifest-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        url: '/favicon-for-public/web-app-manifest-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 

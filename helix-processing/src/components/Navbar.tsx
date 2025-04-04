@@ -35,7 +35,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Image 
-                src="/favicon-for-public/web-app-manifest-192x192.png" 
+                src="/favicon.ico" 
                 alt="Helix Processing Logo" 
                 width={40} 
                 height={40} 
@@ -54,7 +54,7 @@ export default function Navbar() {
               Services
             </Link>
             <Link href="/locations" className="text-white hover:text-indigo-200 font-bold transition-colors nav-link">
-              Locations
+              Contact
             </Link>
             <Link href="/portal" className="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 hover:scale-105 hover:shadow-md">
               Patient Portal
@@ -98,7 +98,7 @@ export default function Navbar() {
             Services
           </Link>
           <Link href="/locations" className="block px-3 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-4 transition-all duration-200">
-            Locations
+            Contact
           </Link>
           <Link href="/portal" className="block mx-3 my-2 px-3 py-2 text-base font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-full text-center transition-all duration-200 hover:shadow-md">
             Patient Portal
