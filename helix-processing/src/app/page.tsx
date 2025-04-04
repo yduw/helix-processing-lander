@@ -31,39 +31,41 @@ export default function Home() {
         
         {/* Hero Content */}
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pt-16">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 text-shadow-lg fade-in-1">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 text-shadow-lg fade-in-1">
             Helix Processing
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-white mb-8 max-w-3xl mx-auto text-shadow-md fade-in-2">
-            Streamlining Care, Empowering Lives.
-          </p>
-          
-          {/* Patient Counter */}
-          <div className="mb-10 fade-in-3">
-            <p className="text-white font-extrabold text-shadow-md">
-              <span className="font-sans text-white text-xl">
-                <PatientCounter startValue={215782} />
-              </span> patients served
+          <div className="mt-16 pt-4 max-w-lg mx-auto">
+            <p className="text-xl md:text-2xl font-bold text-white mb-6 text-shadow-md fade-in-2">
+              Streamlining Care, Empowering Lives.
             </p>
-          </div>
-          
-          {/* CTA Button */}
-          <div className="fade-in-4">
-            <Link 
-              href="#services" 
-              className="inline-flex items-center px-6 py-3 border border-transparent rounded-full text-base font-extrabold text-white lighter-gradient hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-200"
-              onClick={(e) => {
-                e.preventDefault();
-                const servicesSection = document.getElementById('services');
-                if (servicesSection) {
-                  const yOffset = -40; // Add negative offset to prevent scrolling too far
-                  const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                  window.scrollTo({top: y, behavior: 'smooth'});
-                }
-              }}
-            >
-              Explore Our Services
-            </Link>
+            
+            {/* Patient Counter */}
+            <div className="mb-8 fade-in-3">
+              <p className="text-white font-extrabold text-shadow-md">
+                <span className="font-sans text-white text-xl">
+                  <PatientCounter startValue={215782} />
+                </span> patients served
+              </p>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="fade-in-4">
+              <Link 
+                href="#services" 
+                className="inline-flex items-center px-6 py-3 border border-transparent rounded-full text-base font-extrabold text-white lighter-gradient hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-200"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const servicesSection = document.getElementById('services');
+                  if (servicesSection) {
+                    const yOffset = -40; // Add negative offset to prevent scrolling too far
+                    const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({top: y, behavior: 'smooth'});
+                  }
+                }}
+              >
+                Learn More
+              </Link>
+            </div>
           </div>
         </div>
         

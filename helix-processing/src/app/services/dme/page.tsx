@@ -1,6 +1,19 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function DmePage() {
+  // State to track which category is expanded
+  const [expandedCategory, setExpandedCategory] = useState(null);
+  
+  // Toggle category expansion
+  const toggleCategory = (category) => {
+    if (expandedCategory === category) {
+      setExpandedCategory(null);
+    } else {
+      setExpandedCategory(category);
+    }
+  };
   return (
     <div className="min-h-screen service-bg-dme relative">
       <div className="service-bg-overlay"></div>
@@ -77,61 +90,241 @@ export default function DmePage() {
           </div>
         </div>
         
-        {/* Section 2: Equipment Categories */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center mb-3">
-            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center mr-3">
-              <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-              </svg>
+        {/* Section 2: Equipment Categories - Interactive Expandable Categories */}
+        <div className="mb-20">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center mb-3">
+              <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center mr-3">
+                <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+              </div>
+              <h2 className="text-3xl font-bold text-white">Our Equipment Catalog</h2>
             </div>
-            <h2 className="text-3xl font-bold text-white">Equipment Categories</h2>
+            <p className="text-white/80 max-w-2xl mx-auto mb-10">
+              Click on any category to explore our comprehensive selection of high-quality durable medical equipment
+            </p>
           </div>
-          <p className="text-white/80 max-w-2xl mx-auto mb-12">
-            We offer a comprehensive range of durable medical equipment across multiple categories
-          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="flex items-start mb-4">
-                <div className="w-10 h-10 bg-pink-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <svg className="h-6 w-6 text-pink-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+          {/* Expandable Equipment Categories */}
+          <div className="space-y-5 max-w-5xl mx-auto">
+            {/* Mobility Assistance Category */}
+            <div className="bg-gradient-to-r from-pink-600/20 to-pink-800/10 rounded-2xl border border-pink-500/20 overflow-hidden shadow-lg">
+              <div 
+                className="p-6 cursor-pointer flex items-center justify-between"
+                onClick={() => toggleCategory('mobility')}
+              >
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-pink-600/30 rounded-xl flex items-center justify-center mr-4">
+                    <svg className="h-6 w-6 text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Mobility Assistance</h3>
+                </div>
+                <div className="flex-shrink-0">
+                  <svg 
+                    className={`h-6 w-6 text-pink-300 transition-transform duration-300 ${expandedCategory === 'mobility' ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white">Mobility Aids</h3>
               </div>
-              <p className="text-white/80 leading-relaxed">
-                Wheelchairs, walkers, and mobility scooters designed for comfort and independence in daily activities.
-              </p>
+              
+              {/* Expandable Content */}
+              <div 
+                className={`px-6 overflow-hidden transition-all duration-500 ${
+                  expandedCategory === 'mobility' 
+                    ? 'max-h-96 opacity-100 pb-6' 
+                    : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Canes</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Crutches</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Walkers</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Rollators</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Wheelchairs</h4>
+                      <p className="text-white/80 text-sm">Custom, Power and Manual</p>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Wheelchair Accessories</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Mobility Accessories</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="flex items-start mb-4">
-                <div className="w-10 h-10 bg-pink-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <svg className="h-6 w-6 text-pink-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            {/* Home Therapy Equipment Category */}
+            <div className="bg-gradient-to-r from-pink-700/20 to-pink-900/10 rounded-2xl border border-pink-500/20 overflow-hidden shadow-lg">
+              <div 
+                className="p-6 cursor-pointer flex items-center justify-between"
+                onClick={() => toggleCategory('therapy')}
+              >
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-pink-600/30 rounded-xl flex items-center justify-center mr-4">
+                    <svg className="h-6 w-6 text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Home Therapy Equipment</h3>
+                </div>
+                <div className="flex-shrink-0">
+                  <svg 
+                    className={`h-6 w-6 text-pink-300 transition-transform duration-300 ${expandedCategory === 'therapy' ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white">Respiratory Equipment</h3>
               </div>
-              <p className="text-white/80 leading-relaxed">
-                Oxygen concentrators, CPAP machines, and respiratory therapy devices for improved breathing and comfort.
-              </p>
+              
+              {/* Expandable Content */}
+              <div 
+                className={`px-6 overflow-hidden transition-all duration-500 ${
+                  expandedCategory === 'therapy' 
+                    ? 'max-h-96 opacity-100 pb-6' 
+                    : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Lymphedema Pumps</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Negative Pressure Wound Therapy</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Continuous Passive Motion (CPM)</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Tens Unit</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="flex items-start mb-4">
-                <div className="w-10 h-10 bg-pink-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <svg className="h-6 w-6 text-pink-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            {/* Orthotics & Prosthetic Category */}
+            <div className="bg-gradient-to-r from-pink-600/20 to-pink-800/10 rounded-2xl border border-pink-500/20 overflow-hidden shadow-lg">
+              <div 
+                className="p-6 cursor-pointer flex items-center justify-between"
+                onClick={() => toggleCategory('orthotics')}
+              >
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-pink-600/30 rounded-xl flex items-center justify-center mr-4">
+                    <svg className="h-6 w-6 text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Orthotics & Prosthetic</h3>
+                </div>
+                <div className="flex-shrink-0">
+                  <svg 
+                    className={`h-6 w-6 text-pink-300 transition-transform duration-300 ${expandedCategory === 'orthotics' ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white">Home Care & Hospital Beds</h3>
               </div>
-              <p className="text-white/80 leading-relaxed">
-                Adjustable beds, patient lifts, and other home care equipment designed for comfort, safety, and recovery.
-              </p>
+              
+              {/* Expandable Content */}
+              <div 
+                className={`px-6 overflow-hidden transition-all duration-500 ${
+                  expandedCategory === 'orthotics' 
+                    ? 'max-h-96 opacity-100 pb-6' 
+                    : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Braces</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Cervical Traction Sets</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Slings</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Miscellaneous Category */}
+            <div className="bg-gradient-to-r from-pink-700/20 to-pink-900/10 rounded-2xl border border-pink-500/20 overflow-hidden shadow-lg">
+              <div 
+                className="p-6 cursor-pointer flex items-center justify-between"
+                onClick={() => toggleCategory('misc')}
+              >
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-pink-600/30 rounded-xl flex items-center justify-center mr-4">
+                    <svg className="h-6 w-6 text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Miscellaneous</h3>
+                </div>
+                <div className="flex-shrink-0">
+                  <svg 
+                    className={`h-6 w-6 text-pink-300 transition-transform duration-300 ${expandedCategory === 'misc' ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+              
+              {/* Expandable Content */}
+              <div 
+                className={`px-6 overflow-hidden transition-all duration-500 ${
+                  expandedCategory === 'misc' 
+                    ? 'max-h-96 opacity-100 pb-6' 
+                    : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Breast Pumps</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Bili Blankets</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Diabetic Shoes</h4>
+                    </div>
+                    <div className="bg-pink-900/20 rounded-lg p-3 hover:bg-pink-900/30 transition-colors">
+                      <h4 className="font-bold text-white">Immobilization Equipment</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -152,7 +345,7 @@ export default function DmePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-3xl">
             <a href="#" className="group">
               <div className="bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/5 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center mb-4">
@@ -184,26 +377,6 @@ export default function DmePage() {
                   <h3 className="text-lg font-bold text-white">Insurance Coverage Guide</h3>
                 </div>
                 <p className="text-white/80 mb-4 flex-grow">Details on insurance coverage for our medical equipment and services.</p>
-                <div className="text-pink-300 group-hover:text-pink-200 font-medium inline-flex items-center transition-all">
-                  Download PDF
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-            </a>
-            
-            <a href="#" className="group">
-              <div className="bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/5 transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-pink-600/20 rounded-lg flex items-center justify-center mr-3">
-                    <svg className="h-5 w-5 text-pink-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-bold text-white">Maintenance Schedule</h3>
-                </div>
-                <p className="text-white/80 mb-4 flex-grow">Recommended maintenance schedules to keep your equipment in optimal condition.</p>
                 <div className="text-pink-300 group-hover:text-pink-200 font-medium inline-flex items-center transition-all">
                   Download PDF
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" fill="currentColor" viewBox="0 0 20 20">

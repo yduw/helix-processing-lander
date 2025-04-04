@@ -7,19 +7,19 @@ const teamMembers = [
   {
     name: "Tom Meena",
     title: "Chief Executive Officer",
-    bio: "Tom brings extensive leadership experience to Helix Processing, guiding our vision to transform healthcare delivery through innovative technology solutions.",
+    bio: "Leading our vision for healthcare innovation.",
     image: "/images/profiles/thomas-meena.jpg"
   },
   {
     name: "Sean Cheng",
     title: "Chief Technology Officer",
-    bio: "With deep expertise in AI and healthcare technology, Sean leads our technical strategy and innovation to develop cutting-edge solutions for healthcare providers.",
+    bio: "Driving AI advancement in healthcare solutions.",
     image: "/images/profiles/sean-cheng.jpg"
   },
   {
     name: "Mary Ann McGowan",
     title: "Chief Operating Officer",
-    bio: "Mary Ann oversees our day-to-day operations, ensuring efficient processes and exceptional service delivery to our healthcare partners and clients.",
+    bio: "Optimizing operations and service excellence.",
     image: "/images/profiles/mary-ann.jpg"
   }
 ];
@@ -105,8 +105,8 @@ export default function AboutPage() {
           </div>
         </div>
         
-        {/* Scroll Down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        {/* Scroll Down Indicator - positioned in the middle of the blur */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
           <svg className="w-6 h-6 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -114,7 +114,7 @@ export default function AboutPage() {
       </section>
       
       {/* Color transition element */}
-      <div className="h-20 bg-gradient-to-b from-indigo-900/60 to-indigo-900/100 relative z-20 -mt-20"></div>
+      <div className="h-16 bg-gradient-to-b from-indigo-900/30 to-indigo-900/90 relative z-20 -mt-16"></div>
       
       {/* Leadership Team Section */}
       <section className="py-20 animated-gradient-bg relative overflow-hidden -mt-1">
