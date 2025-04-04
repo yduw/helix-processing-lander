@@ -29,7 +29,7 @@ export default function DmePage() {
                 </svg>
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white text-shadow-lg">
-                Durable Medical Equipment <span className="text-pink-200">(DME)</span>
+                Nova Durable Medical Equipment <span className="text-pink-200">(DME)</span>
               </h1>
             </div>
             <div className="mt-10 max-w-3xl text-center">

@@ -93,13 +93,13 @@ export default function Navbar() {
                     href="/services/dme" 
                     className="block px-4 py-3 text-base font-bold text-white hover:bg-indigo-800/70 hover:pl-5 transition-all duration-200"
                   >
-                    Durable Medical Equipment
+                    Nova Durable Medical Equipment
                   </Link>
                   <Link 
                     href="/services/tpa-software" 
                     className="block px-4 py-3 text-base font-bold text-white hover:bg-indigo-800/70 hover:pl-5 transition-all duration-200"
                   >
-                    AI TPA Software
+                    Nova TPA Software
                   </Link>
                 </div>
               </div>
@@ -156,10 +156,10 @@ export default function Navbar() {
               FDA-Compliant Medical Products
             </Link>
             <Link href="/services/dme" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
-              Durable Medical Equipment
+              Nova Durable Medical Equipment
             </Link>
             <Link href="/services/tpa-software" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
-              AI TPA Software
+              Nova TPA Software
             </Link>
           </div>
           

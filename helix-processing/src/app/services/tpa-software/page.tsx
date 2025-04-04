@@ -24,12 +24,12 @@ export default function TPASoftwarePage() {
                 </svg>
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white text-shadow-lg">
-                AI Third-Party Administration <span className="text-violet-200">(TPA)</span> Software
+                Nova Third-Party Administration <span className="text-violet-200">(TPA)</span> Software
               </h1>
             </div>
             <div className="mt-10 max-w-3xl text-center">
               <p className="text-xl text-white/90 font-medium leading-relaxed text-shadow-sm">
-                Automating third-party administration with advanced artificial intelligence and 24/7 AI customer support
+                Our AI-powered TPA software automating third-party administration with advanced artificial intelligence and 24/7 AI customer support
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function TPASoftwarePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6 leading-tight">
-                <span className="text-violet-300">AI-Powered</span> Third-Party Administration
+                <span className="text-violet-300">Nova:</span> AI-Powered Third-Party Administration
               </h2>
               <p className="text-white/90 mb-8 text-lg leading-relaxed">
                 Our cutting-edge AI technology transforms third-party administration processes, 
