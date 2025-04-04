@@ -102,27 +102,15 @@ body {
 }
 
 .shimmer-text {
-  background: linear-gradient(90deg, 
-              #ff4edf 0%, 
-              #0ef 20%,
-              #ffffff 50%,
-              #0ef 80%,
-              #ff4edf 100%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: white;
   display: inline-block;
-  text-shadow: 
-    0 0 10px rgba(255, 255, 255, 1),
-    0 0 20px rgba(0, 238, 255, 0.9),
-    0 0 40px rgba(255, 78, 223, 0.8);
   font-weight: 800;
   position: relative;
   z-index: 1;
-  filter: brightness(1.5) contrast(1.2);
   letter-spacing: 0.5px;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 3px 10px;
 }
 
 .animate-fade-in-up {
@@ -131,22 +119,10 @@ body {
   will-change: opacity, transform;
 }
 
-/* Service card animations on scroll */
-.service-card {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Initially show cards if JavaScript is disabled */
+/* Service card animations are now handled with inline JavaScript */
 .no-js .service-card {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.service-card.animate {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .animate-delay-1 {
@@ -164,13 +140,26 @@ body {
 /* Card hover animations */
 .card-hover-effect {
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
 }
 
 .card-hover-effect:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.3), 0 10px 10px -5px rgba(79, 70, 229, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.card-medical-bg {
+  background: linear-gradient(to bottom right, rgba(79, 70, 229, 0.7), rgba(67, 56, 202, 0.7));
+}
+
+.card-dme-bg {
+  background: linear-gradient(to bottom right, rgba(126, 34, 206, 0.7), rgba(147, 51, 234, 0.7));
+}
+
+.card-ai-bg {
+  background: linear-gradient(to bottom right, rgba(109, 40, 217, 0.7), rgba(124, 58, 237, 0.7));
 }
 
 .secondary-card-hover:hover {
@@ -191,11 +180,69 @@ body {
 }
 
 .animated-gradient-bg {
-  background: linear-gradient(-45deg, #312e81, #3730a3, #4338ca, #3730a3, #312e81);
-  background-size: 400% 400%;
-  animation: gradientFlow 20s ease infinite;
+  background: linear-gradient(to bottom right, #4f46e5, #312e81);  /* indigo-600 to indigo-900 */
   position: relative;
   box-shadow: inset 0 0 100px rgba(79, 70, 229, 0.2);
+}
+
+/* Darker purple header background */
+.service-section-bg {
+  background: linear-gradient(to bottom right, #4338ca, #312e81);  /* indigo-700 to indigo-900 */
+  position: relative;
+  box-shadow: inset 0 0 100px rgba(67, 56, 202, 0.4);
+}
+
+/* Service page animated backgrounds */
+@keyframes subtleWave {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.service-bg-medical {
+  background: linear-gradient(-45deg, #4f46e5, #818cf8, #6366f1, #4338ca);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: subtleWave 15s ease infinite;
+  position: relative;
+  min-height: 100vh;
+}
+
+.service-bg-dme {
+  background: linear-gradient(-45deg, #7e22ce, #a855f7, #c084fc, #9333ea);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: subtleWave 18s ease infinite;
+  position: relative;
+  min-height: 100vh;
+}
+
+.service-bg-ai {
+  background: linear-gradient(-45deg, #6d28d9, #8b5cf6, #a78bfa, #7c3aed);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: subtleWave 20s ease infinite;
+  position: relative;
+  min-height: 100vh;
+}
+
+.service-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-content {
+  position: relative;
+  z-index: 10;
 }
 
 .footer-gradient {

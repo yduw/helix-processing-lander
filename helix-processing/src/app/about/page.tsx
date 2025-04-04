@@ -127,7 +127,7 @@ export default function AboutPage() {
             {teamMembers.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-gradient-to-b from-indigo-800/80 to-indigo-900/90 backdrop-blur-sm rounded-xl p-8 shadow-md 
+                className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-md 
                            hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center h-full 
                            card-hover-effect"
               >
@@ -138,9 +138,9 @@ export default function AboutPage() {
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-indigo-200 font-medium mb-4">{member.title}</p>
-                <p className="text-gray-200 mb-6 font-medium flex-grow">
+                <h3 className="text-xl font-bold text-indigo-900 mb-2">{member.name}</h3>
+                <p className="text-indigo-700 font-medium mb-4">{member.title}</p>
+                <p className="text-gray-700 mb-6 font-medium flex-grow">
                   {member.bio}
                 </p>
               </div>
