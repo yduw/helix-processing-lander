@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+// No imports needed currently
 
 export const metadata = {
   title: "Services & Products - Helix Processing",

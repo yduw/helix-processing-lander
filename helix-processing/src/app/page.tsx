@@ -1,6 +1,6 @@
 'use client';
 
-import Image from "next/image";
+// Imports will be added when needed
 import Link from "next/link";
 import TextScramble from "@/components/TextScramble";
 import PatientCounter from "@/components/PatientCounter";
@@ -126,7 +126,7 @@ export default function Home() {
         {/* Content container with proper spacing */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl font-extrabold text-center mb-16 animate-fade-in-up">
-            <span className="text-white">California's leader in </span>
+            <span className="text-white">California&apos;s leader in </span>
             <span className="shimmer-text font-bold">Healthcare Innovation</span>
             <span className="text-white">.</span>
           </h2>

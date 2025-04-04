@@ -1,6 +1,6 @@
 'use client';
 
-import Image from "next/image";
+// Imports will be added when needed
 import { useEffect } from "react";
 
 export default function LocationsPage() {

@@ -1,4 +1,4 @@
-import Image from "next/image";
+// No imports needed currently
 
 export const metadata = {
   title: "About Us - Helix Processing",

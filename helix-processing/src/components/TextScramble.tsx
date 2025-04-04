@@ -32,7 +32,7 @@ export default function TextScramble({ text, className = '' }: TextScrambleProps
     const shouldUpdateChars = frameSkipCounter.current === 0;
     
     for (let i = 0, n = text.length; i < n; i++) {
-      let current = text[i];
+      const current = text[i];
       
       // If the current character is already correct, keep it and mark as complete
       if (i >= queue.current.length || queue.current[i].end <= frame.current) {
@@ -42,7 +42,7 @@ export default function TextScramble({ text, className = '' }: TextScrambleProps
       }
       
       // For characters still animating, show either the intermediate or random character
-      const { from, to, start, end, char } = queue.current[i];
+      const { to, start, end, char } = queue.current[i];
       const progress = Math.max(0, Math.min(1, (frame.current - start) / (end - start)));
       
       if (progress < 1) {
@@ -67,31 +67,32 @@ export default function TextScramble({ text, className = '' }: TextScrambleProps
     }
   };
 
-  const scramble = () => {
-    frame.current = 0;
-    
-    // Reset the queue
-    queue.current = [];
-    
-    // Create a queue item for each character - 2.5x slower
-    for (let i = 0, n = text.length; i < n; i++) {
-      const from = output[i] || '';
-      const to = text[i];
-      const start = Math.floor(Math.random() * 30); // 2.5x slower (was 30)
-      const end = start + Math.floor(Math.random() * 75) + 20; // 2.5x slower (was 60+20)
-      queue.current.push({ from, to, start, end });
-    }
-    
-    // Cancel any existing animation
-    if (frameRequest.current) {
-      cancelAnimationFrame(frameRequest.current);
-    }
-    
-    // Start the animation
-    frameRequest.current = requestAnimationFrame(update);
-  };
-
   useEffect(() => {
+    // Define scramble function inside useEffect to avoid dependency issues
+    const scramble = () => {
+      frame.current = 0;
+      
+      // Reset the queue
+      queue.current = [];
+      
+      // Create a queue item for each character - 2.5x slower
+      for (let i = 0, n = text.length; i < n; i++) {
+        const from = output[i] || '';
+        const to = text[i];
+        const start = Math.floor(Math.random() * 30); // 2.5x slower (was 30)
+        const end = start + Math.floor(Math.random() * 75) + 20; // 2.5x slower (was 60+20)
+        queue.current.push({ from, to, start, end });
+      }
+      
+      // Cancel any existing animation
+      if (frameRequest.current) {
+        cancelAnimationFrame(frameRequest.current);
+      }
+      
+      // Start the animation
+      frameRequest.current = requestAnimationFrame(update);
+    };
+
     // Start the animation on mount or when text changes
     scramble();
     
@@ -106,7 +107,7 @@ export default function TextScramble({ text, className = '' }: TextScrambleProps
         cancelAnimationFrame(frameRequest.current);
       }
     };
-  }, [text]);
+  }, [text, output]);
 
   return (
     <span className={className}>

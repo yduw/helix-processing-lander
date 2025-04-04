@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+// Imports will be added when needed
 import { useState } from "react";
 
 export default function PortalPage() {
@@ -121,7 +120,7 @@ export default function PortalPage() {
         <div className="mt-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-md p-6 border border-white/20 secondary-card-hover">
           <h3 className="text-lg font-medium text-gray-900 mb-3">New Patient?</h3>
           <p className="text-gray-700 mb-4">
-            If you don't have an account yet, please contact your healthcare provider to get set up with patient portal access.
+            If you don&apos;t have an account yet, please contact your healthcare provider to get set up with patient portal access.
           </p>
           <a 
             href="#" 
