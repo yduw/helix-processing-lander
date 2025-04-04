@@ -5,31 +5,35 @@ export default function AiClaimsProcessingPage() {
     <div className="min-h-screen service-bg-ai relative">
       <div className="service-bg-overlay"></div>
       <div className="service-content relative z-10 pt-28 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-16">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 text-shadow-lg">
-              AI-Powered Claims Processing
+              Third-Party Administration (TPA) Software
             </h1>
             <p className="text-xl md:text-2xl font-semibold text-white/90 max-w-3xl mx-auto text-shadow-sm">
-              Streamlining healthcare administration with cutting-edge artificial intelligence
+              Automating third-party administration with advanced artificial intelligence
             </p>
           </div>
         </div>
       </div>
       
-      <div className="bg-white/90 backdrop-blur-sm py-16 relative z-10 rounded-t-3xl shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-white/70 backdrop-blur-xl py-16 relative z-10 rounded-3xl shadow-xl mx-8 sm:mx-12 lg:mx-20 mt-8 border border-white/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center mb-20">
-            <div className="bg-gray-100 h-80 rounded-xl flex items-center justify-center mb-8 lg:mb-0">
-              <p className="text-gray-600 font-medium">[Image: AI technology processing insurance claims]</p>
+            <div className="h-80 rounded-xl overflow-hidden mb-8 lg:mb-0">
+              <img 
+                src="/images/tpa-service/tpa.jpg" 
+                alt="Third-Party Administration software" 
+                className="w-full h-full object-cover object-center"
+              />
             </div>
             <div>
               <div className="inline-block bg-violet-100 text-violet-700 px-4 py-1 rounded-full text-sm font-bold mb-4">
                 Next-Gen Technology
               </div>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Revolutionizing Claims Processing</h2>
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Revolutionizing Third-Party Administration</h2>
               <p className="text-gray-700 mb-6 font-medium">
-                Our cutting-edge AI technology streamlines the claims process, reducing administrative burden and accelerating reimbursement for healthcare providers.
+                Our cutting-edge AI technology streamlines third-party administration processes, reducing operational complexities and accelerating outcomes for healthcare providers.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -90,15 +94,15 @@ export default function AiClaimsProcessingPage() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Detailed Analytics</h3>
-                <p className="text-gray-700 font-medium">Comprehensive reporting and insights on claims processing efficiency and financial performance.</p>
+                <p className="text-gray-700 font-medium">Comprehensive reporting and insights on TPA operations efficiency and financial performance.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-white/90 backdrop-blur-sm py-16 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-white/70 backdrop-blur-xl py-16 relative z-10 rounded-3xl shadow-xl mx-8 sm:mx-12 lg:mx-20 mt-8 border border-white/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-violet-900 mb-4">Resources & Downloads</h2>
             <p className="text-xl font-semibold text-violet-800 max-w-3xl mx-auto">
@@ -114,7 +118,7 @@ export default function AiClaimsProcessingPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">AI Services Demo</h3>
-              <p className="text-gray-700 font-medium mb-4">Watch our video demonstration of our AI-powered claims processing system.</p>
+              <p className="text-gray-700 font-medium mb-4">Watch our video demonstration of our AI TPA software.</p>
               <a href="#" className="text-violet-600 font-bold hover:text-violet-800 inline-flex items-center transition-colors">
                 Watch Video
                 <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">

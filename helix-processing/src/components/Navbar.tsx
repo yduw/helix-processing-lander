@@ -96,10 +96,10 @@ export default function Navbar() {
                     Durable Medical Equipment
                   </Link>
                   <Link 
-                    href="/services/ai-claims-processing" 
+                    href="/services/tpa-software" 
                     className="block px-4 py-3 text-base font-bold text-white hover:bg-indigo-800/70 hover:pl-5 transition-all duration-200"
                   >
-                    AI-Powered Claims Processing
+                    AI TPA Software
                   </Link>
                 </div>
               </div>
@@ -158,8 +158,8 @@ export default function Navbar() {
             <Link href="/services/dme" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
               Durable Medical Equipment
             </Link>
-            <Link href="/services/ai-claims-processing" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
-              AI-Powered Claims Processing
+            <Link href="/services/tpa-software" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
+              AI TPA Software
             </Link>
           </div>
           

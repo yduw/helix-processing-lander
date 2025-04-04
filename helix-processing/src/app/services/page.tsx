@@ -2,7 +2,7 @@
 
 export const metadata = {
   title: "Services & Products - Helix Processing",
-  description: "Explore our range of FDA-compliant medical goods, durable medical equipment, and AI-powered insurance claims processing services.",
+  description: "Explore our range of FDA-compliant medical goods, durable medical equipment, and AI TPA software services.",
 };
 
 export default function ServicesPage() {
@@ -129,14 +129,18 @@ export default function ServicesPage() {
 
           {/* AI-Powered Insurance Claims Processing */}
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="bg-gray-100 h-80 rounded-xl flex items-center justify-center mb-8 lg:mb-0">
-              <p className="text-gray-600 font-medium">[Image: AI technology processing insurance claims]</p>
+            <div className="h-80 rounded-xl overflow-hidden mb-8 lg:mb-0">
+              <img 
+                src="/images/tpa-service/tpa.jpg" 
+                alt="Third-Party Administration software" 
+                className="w-full h-full object-cover object-center"
+              />
             </div>
             <div>
               <div className="inline-block bg-violet-100 text-violet-700 px-4 py-1 rounded-full text-sm font-bold mb-4">
                 Next-Gen Technology
               </div>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">AI-Powered Insurance Claims Processing</h2>
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Third-Party Administration (TPA) Software</h2>
               <p className="text-gray-700 mb-6 font-medium">
                 Our cutting-edge AI technology streamlines the claims process, reducing administrative burden and accelerating reimbursement for healthcare providers.
               </p>
@@ -232,7 +236,7 @@ export default function ServicesPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">AI Services Demo</h3>
-              <p className="text-gray-700 font-medium mb-4">Watch our video demonstration of our AI-powered claims processing system.</p>
+              <p className="text-gray-700 font-medium mb-4">Watch our video demonstration of our AI TPA software.</p>
               <a href="#" className="text-violet-600 font-bold hover:text-violet-800 inline-flex items-center transition-colors">
                 Watch Video
                 <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">

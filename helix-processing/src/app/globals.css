@@ -144,22 +144,55 @@ body {
   backdrop-filter: blur(8px);
 }
 
+/* Team member card backgrounds */
+.team-card-bg {
+  background: linear-gradient(-45deg, rgba(55, 48, 163, 0.8), rgba(79, 70, 229, 0.8), rgba(99, 102, 241, 0.8), rgba(67, 56, 202, 0.8), rgba(55, 48, 163, 0.8));
+  background-size: 300% 300%;
+  animation: cardGradientShift 20s ease infinite;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px -1px rgba(55, 48, 163, 0.2), 0 2px 4px -1px rgba(55, 48, 163, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .card-hover-effect:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.3), 0 10px 10px -5px rgba(79, 70, 229, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+/* Subtle shifting animation for card backgrounds */
+@keyframes cardGradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Card backgrounds with complex gradients matching their color families */
 .card-medical-bg {
-  background: linear-gradient(to bottom right, rgba(79, 70, 229, 0.7), rgba(67, 56, 202, 0.7));
+  background: linear-gradient(-45deg, rgba(55, 48, 163, 0.8), rgba(79, 70, 229, 0.8), rgba(99, 102, 241, 0.8), rgba(67, 56, 202, 0.8), rgba(55, 48, 163, 0.8));
+  background-size: 300% 300%;
+  animation: cardGradientShift 15s ease infinite;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 30px rgba(55, 48, 163, 0.3);
 }
 
 .card-dme-bg {
-  background: linear-gradient(to bottom right, rgba(126, 34, 206, 0.7), rgba(147, 51, 234, 0.7));
+  background: linear-gradient(-45deg, rgba(107, 33, 168, 0.8), rgba(126, 34, 206, 0.8), rgba(147, 51, 234, 0.8), rgba(126, 34, 206, 0.8), rgba(107, 33, 168, 0.8));
+  background-size: 300% 300%;
+  animation: cardGradientShift 18s ease infinite;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 30px rgba(107, 33, 168, 0.3);
 }
 
 .card-ai-bg {
-  background: linear-gradient(to bottom right, rgba(109, 40, 217, 0.7), rgba(124, 58, 237, 0.7));
+  background: linear-gradient(-45deg, rgba(91, 33, 182, 0.8), rgba(109, 40, 217, 0.8), rgba(124, 58, 237, 0.8), rgba(109, 40, 217, 0.8), rgba(91, 33, 182, 0.8));
+  background-size: 300% 300%;
+  animation: cardGradientShift 20s ease infinite;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 30px rgba(91, 33, 182, 0.3);
 }
 
 .secondary-card-hover:hover {
@@ -180,16 +213,18 @@ body {
 }
 
 .animated-gradient-bg {
-  background: linear-gradient(to bottom right, #4f46e5, #312e81);  /* indigo-600 to indigo-900 */
+  background: linear-gradient(-45deg, #1e1b4b, #2e1065, #4f46e5, #2e1065, #1e1b4b);  /* match footer */
+  background-size: 300% 300%;
+  animation: cardGradientShift 25s ease infinite;
   position: relative;
   box-shadow: inset 0 0 100px rgba(79, 70, 229, 0.2);
 }
 
-/* Darker purple header background */
+/* Service section background (matches footer) */
 .service-section-bg {
-  background: linear-gradient(to bottom right, #4338ca, #312e81);  /* indigo-700 to indigo-900 */
+  background: linear-gradient(-45deg, #1e1b4b, #2e1065, #312e81, #2e1065, #1e1b4b);
   position: relative;
-  box-shadow: inset 0 0 100px rgba(67, 56, 202, 0.4);
+  box-shadow: inset 0 0 100px rgba(30, 27, 75, 0.3);
 }
 
 /* Service page animated backgrounds */
@@ -202,31 +237,35 @@ body {
   }
 }
 
+/* Service page backgrounds matching footer style with their specific color themes */
 .service-bg-medical {
-  background: linear-gradient(-45deg, #4f46e5, #818cf8, #6366f1, #4338ca);
-  background-size: 400% 400%;
+  background: linear-gradient(-45deg, #1e1b4b, #3730a3, #4f46e5, #3730a3, #1e1b4b);
+  background-size: 300% 300%;
   background-attachment: fixed;
-  animation: subtleWave 15s ease infinite;
+  animation: cardGradientShift 20s ease infinite;
   position: relative;
   min-height: 100vh;
+  box-shadow: inset 0 0 100px rgba(67, 56, 202, 0.3);
 }
 
 .service-bg-dme {
-  background: linear-gradient(-45deg, #7e22ce, #a855f7, #c084fc, #9333ea);
-  background-size: 400% 400%;
+  background: linear-gradient(-45deg, #2e1065, #6b21a8, #9333ea, #6b21a8, #2e1065);
+  background-size: 300% 300%;
   background-attachment: fixed;
-  animation: subtleWave 18s ease infinite;
+  animation: cardGradientShift 22s ease infinite;
   position: relative;
   min-height: 100vh;
+  box-shadow: inset 0 0 100px rgba(107, 33, 168, 0.3);
 }
 
 .service-bg-ai {
-  background: linear-gradient(-45deg, #6d28d9, #8b5cf6, #a78bfa, #7c3aed);
-  background-size: 400% 400%;
+  background: linear-gradient(-45deg, #2e1065, #5b21b6, #7c3aed, #5b21b6, #2e1065);
+  background-size: 300% 300%;
   background-attachment: fixed;
-  animation: subtleWave 20s ease infinite;
+  animation: cardGradientShift 24s ease infinite;
   position: relative;
   min-height: 100vh;
+  box-shadow: inset 0 0 100px rgba(91, 33, 182, 0.3);
 }
 
 .service-bg-overlay {
@@ -235,7 +274,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -243,6 +282,7 @@ body {
 .service-content {
   position: relative;
   z-index: 10;
+  padding-bottom: 3rem; /* Add space at bottom */
 }
 
 .footer-gradient {
@@ -382,7 +422,7 @@ body {
   display: inline-block;
   margin: 0 auto;
   width: 0;
-  max-width: fit-content;
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   border-right: 4px solid rgba(255, 255, 255, 0.9);

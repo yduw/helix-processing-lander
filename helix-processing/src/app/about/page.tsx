@@ -98,7 +98,7 @@ export default function AboutPage() {
               Our Mission:
             </p>
             <div className="typing-animation text-white w-full" key={currentMissionIndex}>
-              <p className="text-3xl md:text-5xl font-bold text-shadow-lg tracking-wide">
+              <p className="text-2xl md:text-4xl font-bold text-shadow-lg tracking-wide max-w-4xl mx-auto">
                 {missionStatements[currentMissionIndex]}
               </p>
             </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
             {teamMembers.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-md 
+                className="team-card-bg rounded-xl p-8 shadow-md 
                            hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center h-full 
                            card-hover-effect"
               >
@@ -138,9 +138,9 @@ export default function AboutPage() {
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-indigo-900 mb-2">{member.name}</h3>
-                <p className="text-indigo-700 font-medium mb-4">{member.title}</p>
-                <p className="text-gray-700 mb-6 font-medium flex-grow">
+                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+                <p className="text-white/90 font-medium mb-4">{member.title}</p>
+                <p className="text-white/80 mb-6 font-medium flex-grow">
                   {member.bio}
                 </p>
               </div>

@@ -5,7 +5,7 @@ export default function FdaMedicalProductsPage() {
     <div className="min-h-screen service-bg-medical relative">
       <div className="service-bg-overlay"></div>
       <div className="service-content relative z-10 pt-28 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-16">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 text-shadow-lg">
               FDA-Compliant Medical Products
@@ -17,8 +17,8 @@ export default function FdaMedicalProductsPage() {
         </div>
       </div>
       
-      <div className="bg-white/90 backdrop-blur-sm py-16 relative z-10 rounded-t-3xl shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-white/70 backdrop-blur-xl py-16 relative z-10 rounded-3xl shadow-xl mx-8 sm:mx-12 lg:mx-20 mt-8 border border-white/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center mb-20">
             <div className="bg-gray-100 h-80 rounded-xl flex items-center justify-center mb-8 lg:mb-0">
               <p className="text-gray-600 font-medium">[Image: Medical products with FDA approval logos]</p>
@@ -97,8 +97,8 @@ export default function FdaMedicalProductsPage() {
         </div>
       </div>
 
-      <div className="bg-white/90 backdrop-blur-sm py-16 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-white/70 backdrop-blur-xl py-16 relative z-10 rounded-3xl shadow-xl mx-8 sm:mx-12 lg:mx-20 mt-8 border border-white/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-indigo-900 mb-4">Resources & Downloads</h2>
             <p className="text-xl font-semibold text-indigo-800 max-w-3xl mx-auto">
