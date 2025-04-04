@@ -16,12 +16,12 @@ export default function TPASoftwarePage() {
                 </svg>
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white text-shadow-lg">
-                Third-Party Administration <span className="text-violet-200">(TPA)</span> Software
+                AI Third-Party Administration <span className="text-violet-200">(TPA)</span> Software
               </h1>
             </div>
             <div className="mt-6 max-w-3xl text-center">
               <p className="text-xl text-white/90 font-medium leading-relaxed text-shadow-sm">
-                Automating third-party administration with advanced artificial intelligence
+                Automating third-party administration with advanced artificial intelligence and 24/7 AI customer support
               </p>
             </div>
           </div>
@@ -72,6 +72,12 @@ export default function TPASoftwarePage() {
                   </svg>
                   <span>Integration with existing electronic health record systems</span>
                 </li>
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-violet-300 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span><strong className="text-violet-100">24/7 AI-powered customer support</strong> for immediate assistance with claims and coverage inquiries</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -91,7 +97,7 @@ export default function TPASoftwarePage() {
             Our TPA software provides industry-leading features designed to streamline operations and maximize efficiency
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col">
               <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-violet-600/20 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
@@ -131,6 +137,21 @@ export default function TPASoftwarePage() {
               </div>
               <p className="text-white/80 leading-relaxed">
                 Comprehensive reporting and insights on TPA operations efficiency and financial performance with intuitive dashboards.
+              </p>
+            </div>
+            
+            <div className="bg-violet-600/30 backdrop-blur-md rounded-2xl p-8 border border-violet-400/30 hover:shadow-xl transition-all duration-300 flex flex-col relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-gradient-to-bl from-violet-400/20 to-transparent w-32 h-32 -mr-6 -mt-6 rounded-full"></div>
+              <div className="flex items-start mb-4 relative z-10">
+                <div className="w-10 h-10 bg-violet-500/40 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                  <svg className="h-6 w-6 text-violet-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">AI Customer Support</h3>
+              </div>
+              <p className="text-white/90 leading-relaxed relative z-10 font-medium">
+                <strong className="text-violet-100">24/7 intelligent support</strong> with our advanced AI assistance that handles customer inquiries, explains benefits, and resolves claims issues automatically.
               </p>
             </div>
           </div>

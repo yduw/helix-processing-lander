@@ -56,7 +56,7 @@ export default function Home() {
                 e.preventDefault();
                 const servicesSection = document.getElementById('services');
                 if (servicesSection) {
-                  const yOffset = -60; // Add negative offset to prevent scrolling too far
+                  const yOffset = -40; // Add negative offset to prevent scrolling too far
                   const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
                   window.scrollTo({top: y, behavior: 'smooth'});
                 }
@@ -153,7 +153,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white">Third-Party Administration (TPA) Software</h3>
+                <h3 className="text-xl font-bold text-white">AI Third-Party Administration (TPA) Software</h3>
               </div>
               <p className="text-white/90 mb-6 font-medium flex-grow text-left">
                 Streamline your healthcare practice with our cutting-edge AI TPA software that automates third-party administration and claims processing workflows.

@@ -140,7 +140,7 @@ export default function ServicesPage() {
               <div className="inline-block bg-violet-100 text-violet-700 px-4 py-1 rounded-full text-sm font-bold mb-4">
                 Next-Gen Technology
               </div>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Third-Party Administration (TPA) Software</h2>
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">AI Third-Party Administration (TPA) Software</h2>
               <p className="text-gray-700 mb-6 font-medium">
                 Our cutting-edge AI technology streamlines the claims process, reducing administrative burden and accelerating reimbursement for healthcare providers.
               </p>
