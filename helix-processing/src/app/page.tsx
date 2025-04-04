@@ -12,8 +12,8 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full z-0">
-          {/* Semi-transparent overlay for better text readability */}
-          <div className="w-full h-full bg-indigo-900/40 absolute inset-0 z-10" />
+          {/* Semi-transparent overlay for better text readability - reduced opacity */}
+          <div className="w-full h-full bg-indigo-900/25 absolute inset-0 z-10" />
           
           {/* Video element */}
           <video 
@@ -54,7 +54,12 @@ export default function Home() {
               className="inline-flex items-center px-6 py-3 border border-transparent rounded-full text-base font-extrabold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all duration-200"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                const servicesSection = document.getElementById('services');
+                if (servicesSection) {
+                  const yOffset = -60; // Add negative offset to prevent scrolling too far
+                  const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                  window.scrollTo({top: y, behavior: 'smooth'});
+                }
               }}
             >
               Explore Our Services
@@ -62,16 +67,10 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Scroll Down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-          <svg className="w-6 h-6 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
       </section>
       
-      {/* Color transition element - subtler gradient */}
-      <div className="h-20 bg-gradient-to-b from-indigo-900/60 to-indigo-900/100 relative z-20 -mt-20"></div>
+      {/* Color transition element - even subtler gradient */}
+      <div className="h-16 bg-gradient-to-b from-indigo-900/30 to-indigo-900/90 relative z-20 -mt-16"></div>
       
       {/* Summary Section */}
       <section id="services" className="py-20 service-section-bg relative overflow-hidden -mt-1">
@@ -143,7 +142,7 @@ export default function Home() {
             <div className="card-ai-bg rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-48 rounded-lg mb-6 overflow-hidden">
                 <img 
-                  src="/images/tpa-service/tpa.jpg" 
+                  src="/images/service-card-pictures/erp-system.jpg" 
                   alt="Third-Party Administration software" 
                   className="w-full h-full object-cover object-center"
                 />
