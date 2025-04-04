@@ -2,25 +2,25 @@
 
 import { useEffect, useState } from 'react';
 
-// Reduced team member data (just 3 people)
+// Leadership team data
 const teamMembers = [
   {
-    name: "Dr. Sarah Chen",
+    name: "Tom Meena",
     title: "Chief Executive Officer",
-    bio: "Dr. Chen brings over 15 years of healthcare innovation experience, focusing on the intersection of medical technology and patient care.",
-    imagePlaceholder: "[Portrait: Female executive in professional attire]"
+    bio: "Tom brings extensive leadership experience to Helix Processing, guiding our vision to transform healthcare delivery through innovative technology solutions.",
+    image: "/images/profiles/thomas-meena.jpg"
   },
   {
-    name: "Michael Rodriguez",
+    name: "Sean Cheng",
     title: "Chief Technology Officer",
-    bio: "With a background in AI and machine learning, Michael leads our technology initiatives to create smarter healthcare solutions.",
-    imagePlaceholder: "[Portrait: Male tech executive]"
+    bio: "With deep expertise in AI and healthcare technology, Sean leads our technical strategy and innovation to develop cutting-edge solutions for healthcare providers.",
+    image: "/images/profiles/sean-cheng.jpg"
   },
   {
-    name: "Dr. James Wilson",
-    title: "Medical Director",
-    bio: "Dr. Wilson ensures all our products and services meet the highest medical standards and truly address healthcare needs.",
-    imagePlaceholder: "[Portrait: Male doctor in white coat]"
+    name: "Mary Ann McGowan",
+    title: "Chief Operating Officer",
+    bio: "Mary Ann oversees our day-to-day operations, ensuring efficient processes and exceptional service delivery to our healthcare partners and clients.",
+    image: "/images/profiles/mary-ann.jpg"
   }
 ];
 
@@ -131,8 +131,12 @@ export default function AboutPage() {
                            hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center h-full 
                            card-hover-effect"
               >
-                <div className="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center mb-6 text-xs text-indigo-800">
-                  {member.imagePlaceholder}
+                <div className="w-24 h-24 rounded-full mb-6 overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={`${member.name}, ${member.title}`}
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
                 <p className="text-indigo-200 font-medium mb-4">{member.title}</p>
