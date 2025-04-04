@@ -40,9 +40,9 @@ export default function PortalPage() {
         {/* Login Card */}
         <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl overflow-hidden border border-white/20 card-hover-effect">
           <div className="pt-8 px-8 pb-6 footer-gradient">
-            <h2 className="text-2xl font-bold text-white">Patient Login</h2>
+            <h2 className="text-2xl font-bold text-white">Client Login</h2>
             <p className="mt-2 text-indigo-100">
-              Access your secure patient dashboard
+              Access your contracts, claims, and account information
             </p>
           </div>
           
@@ -116,14 +116,14 @@ export default function PortalPage() {
           </div>
         </div>
         
-        {/* New Patient Section - Simple Version with Bold White Text */}
+        {/* New Client Section - Simple Version with Bold White Text */}
         <div className="mt-5 text-center">
-          <span className="text-sm text-white font-bold">New Patient? </span>
+          <span className="text-sm text-white font-bold">New Client? </span>
           <a 
             href="#" 
             className="text-sm font-bold text-indigo-200 hover:text-white transition-colors duration-200 underline"
           >
-            Contact your healthcare provider
+            Contact Helix Processing
           </a>
           <span className="text-sm text-white font-bold"> for portal access.</span>
         </div>

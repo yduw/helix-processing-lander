@@ -109,7 +109,7 @@ export default function Navbar() {
               Contact
             </Link>
             <Link href="/portal" className="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white footer-gradient hover:opacity-90 transition-all duration-200 hover:scale-105 hover:shadow-md">
-              Patient Portal
+              Client Portal
             </Link>
           </div>
           <div className="flex items-center sm:hidden">
@@ -167,7 +167,7 @@ export default function Navbar() {
             Contact
           </Link>
           <Link href="/portal" className="block mx-3 my-2 px-3 py-2 text-base font-bold text-white footer-gradient hover:opacity-90 rounded-full text-center transition-all duration-200 hover:shadow-md">
-            Patient Portal
+            Client Portal
           </Link>
         </div>
       </div>
