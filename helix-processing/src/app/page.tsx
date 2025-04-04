@@ -41,7 +41,7 @@ export default function Home() {
           {/* Patient Counter */}
           <div className="mb-10 fade-in-3">
             <p className="text-white font-extrabold text-shadow-md">
-              <span className="font-mono text-white text-xl">
+              <span className="font-sans text-white text-xl">
                 <PatientCounter startValue={215782} />
               </span> patients served
             </p>

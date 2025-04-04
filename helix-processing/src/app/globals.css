@@ -14,8 +14,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -172,27 +171,30 @@ body {
 
 /* Card backgrounds with complex gradients matching their color families */
 .card-medical-bg {
-  background: linear-gradient(-45deg, rgba(55, 48, 163, 0.8), rgba(79, 70, 229, 0.8), rgba(99, 102, 241, 0.8), rgba(67, 56, 202, 0.8), rgba(55, 48, 163, 0.8));
+  background: linear-gradient(-45deg, rgba(55, 48, 163, 0.25), rgba(79, 70, 229, 0.3), rgba(99, 102, 241, 0.25), rgba(67, 56, 202, 0.3), rgba(55, 48, 163, 0.25));
   background-size: 300% 300%;
   animation: cardGradientShift 15s ease infinite;
   backdrop-filter: blur(10px);
-  box-shadow: inset 0 0 30px rgba(55, 48, 163, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(55, 48, 163, 0.15), 0 2px 4px -1px rgba(55, 48, 163, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-dme-bg {
-  background: linear-gradient(-45deg, rgba(107, 33, 168, 0.8), rgba(126, 34, 206, 0.8), rgba(147, 51, 234, 0.8), rgba(126, 34, 206, 0.8), rgba(107, 33, 168, 0.8));
+  background: linear-gradient(-45deg, rgba(107, 33, 168, 0.25), rgba(126, 34, 206, 0.3), rgba(147, 51, 234, 0.25), rgba(126, 34, 206, 0.3), rgba(107, 33, 168, 0.25));
   background-size: 300% 300%;
   animation: cardGradientShift 18s ease infinite;
   backdrop-filter: blur(10px);
-  box-shadow: inset 0 0 30px rgba(107, 33, 168, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(107, 33, 168, 0.15), 0 2px 4px -1px rgba(107, 33, 168, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-ai-bg {
-  background: linear-gradient(-45deg, rgba(91, 33, 182, 0.8), rgba(109, 40, 217, 0.8), rgba(124, 58, 237, 0.8), rgba(109, 40, 217, 0.8), rgba(91, 33, 182, 0.8));
+  background: linear-gradient(-45deg, rgba(91, 33, 182, 0.25), rgba(109, 40, 217, 0.3), rgba(124, 58, 237, 0.25), rgba(109, 40, 217, 0.3), rgba(91, 33, 182, 0.25));
   background-size: 300% 300%;
   animation: cardGradientShift 20s ease infinite;
   backdrop-filter: blur(10px);
-  box-shadow: inset 0 0 30px rgba(91, 33, 182, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(91, 33, 182, 0.15), 0 2px 4px -1px rgba(91, 33, 182, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .secondary-card-hover:hover {
@@ -223,8 +225,32 @@ body {
 /* Service section background (matches footer) */
 .service-section-bg {
   background: linear-gradient(-45deg, #1e1b4b, #2e1065, #312e81, #2e1065, #1e1b4b);
+  background-size: 300% 300%;
+  animation: cardGradientShift 25s ease infinite;
   position: relative;
   box-shadow: inset 0 0 100px rgba(30, 27, 75, 0.3);
+}
+
+.service-section-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+  z-index: 1;
+}
+
+.service-section-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, rgba(79, 70, 229, 0.03), transparent);
+  z-index: 1;
 }
 
 /* Service page animated backgrounds */
@@ -248,6 +274,28 @@ body {
   box-shadow: inset 0 0 100px rgba(67, 56, 202, 0.3);
 }
 
+.service-bg-medical::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+  z-index: 1;
+}
+
+.service-bg-medical::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, rgba(79, 70, 229, 0.03), transparent);
+  z-index: 1;
+}
+
 .service-bg-dme {
   background: linear-gradient(-45deg, #2e1065, #6b21a8, #9333ea, #6b21a8, #2e1065);
   background-size: 300% 300%;
@@ -258,6 +306,28 @@ body {
   box-shadow: inset 0 0 100px rgba(107, 33, 168, 0.3);
 }
 
+.service-bg-dme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+  z-index: 1;
+}
+
+.service-bg-dme::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, rgba(147, 51, 234, 0.03), transparent);
+  z-index: 1;
+}
+
 .service-bg-ai {
   background: linear-gradient(-45deg, #2e1065, #5b21b6, #7c3aed, #5b21b6, #2e1065);
   background-size: 300% 300%;
@@ -266,6 +336,28 @@ body {
   position: relative;
   min-height: 100vh;
   box-shadow: inset 0 0 100px rgba(91, 33, 182, 0.3);
+}
+
+.service-bg-ai::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+  z-index: 1;
+}
+
+.service-bg-ai::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, rgba(124, 58, 237, 0.03), transparent);
+  z-index: 1;
 }
 
 .service-bg-overlay {
