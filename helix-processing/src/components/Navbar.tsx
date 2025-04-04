@@ -108,7 +108,7 @@ export default function Navbar() {
             <Link href="/locations" className="text-white hover:text-indigo-200 font-bold transition-colors nav-link">
               Contact
             </Link>
-            <Link href="/portal" className="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 hover:scale-105 hover:shadow-md">
+            <Link href="/portal" className="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white footer-gradient hover:opacity-90 transition-all duration-200 hover:scale-105 hover:shadow-md">
               Patient Portal
             </Link>
           </div>
@@ -166,7 +166,7 @@ export default function Navbar() {
           <Link href="/locations" className="block px-3 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-4 transition-all duration-200 border-t border-white/10">
             Contact
           </Link>
-          <Link href="/portal" className="block mx-3 my-2 px-3 py-2 text-base font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-full text-center transition-all duration-200 hover:shadow-md">
+          <Link href="/portal" className="block mx-3 my-2 px-3 py-2 text-base font-bold text-white footer-gradient hover:opacity-90 rounded-full text-center transition-all duration-200 hover:shadow-md">
             Patient Portal
           </Link>
         </div>

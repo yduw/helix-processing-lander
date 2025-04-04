@@ -19,7 +19,7 @@ export default function FdaMedicalProductsPage() {
                 FDA-Compliant Medical Products
               </h1>
             </div>
-            <div className="mt-6 max-w-3xl text-center">
+            <div className="mt-10 max-w-3xl text-center">
               <p className="text-xl text-white/90 font-medium leading-relaxed text-shadow-sm">
                 Quality imported medical products that meet all FDA regulatory standards
               </p>

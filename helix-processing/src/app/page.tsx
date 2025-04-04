@@ -51,7 +51,7 @@ export default function Home() {
           <div className="fade-in-4">
             <Link 
               href="#services" 
-              className="inline-flex items-center px-6 py-3 border border-transparent rounded-full text-base font-extrabold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all duration-200"
+              className="inline-flex items-center px-6 py-3 border border-transparent rounded-full text-base font-extrabold text-white lighter-gradient hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-200"
               onClick={(e) => {
                 e.preventDefault();
                 const servicesSection = document.getElementById('services');
@@ -102,7 +102,7 @@ export default function Home() {
               <p className="text-white/90 mb-6 font-medium flex-grow text-left">
                 Access quality imported medical products that meet all FDA regulatory standards, ensuring safety and effectiveness for patients.
               </p>
-              <Link href="/services/fda-medical-products" className="text-white font-bold hover:text-blue-200 bg-indigo-700 hover:bg-indigo-800 px-4 py-2 rounded-lg inline-flex items-center transition-all duration-200 mt-auto self-start">
+              <Link href="/services/fda-medical-products" className="text-white font-bold lighter-gradient hover:opacity-90 px-4 py-2 rounded-lg inline-flex items-center transition-all duration-200 mt-auto self-start">
                 Learn more
                 <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -130,7 +130,7 @@ export default function Home() {
               <p className="text-white/90 mb-6 font-medium flex-grow text-left">
                 Reliable, high-quality medical equipment designed for long-term use, enhancing patient care and improving quality of life.
               </p>
-              <Link href="/services/dme" className="text-white font-bold hover:text-pink-200 bg-pink-700 hover:bg-pink-800 px-4 py-2 rounded-lg inline-flex items-center transition-all duration-200 mt-auto self-start">
+              <Link href="/services/dme" className="text-white font-bold lighter-gradient hover:opacity-90 px-4 py-2 rounded-lg inline-flex items-center transition-all duration-200 mt-auto self-start">
                 Learn more
                 <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -158,7 +158,7 @@ export default function Home() {
               <p className="text-white/90 mb-6 font-medium flex-grow text-left">
                 Streamline your healthcare practice with our cutting-edge AI TPA software that automates third-party administration and claims processing workflows.
               </p>
-              <Link href="/services/tpa-software" className="text-white font-bold hover:text-violet-200 bg-violet-700 hover:bg-violet-800 px-4 py-2 rounded-lg inline-flex items-center transition-all duration-200 mt-auto self-start">
+              <Link href="/services/tpa-software" className="text-white font-bold lighter-gradient hover:opacity-90 px-4 py-2 rounded-lg inline-flex items-center transition-all duration-200 mt-auto self-start">
                 Learn more
                 <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />

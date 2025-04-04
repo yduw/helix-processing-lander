@@ -19,7 +19,7 @@ export default function DmePage() {
                 Durable Medical Equipment <span className="text-pink-200">(DME)</span>
               </h1>
             </div>
-            <div className="mt-6 max-w-3xl text-center">
+            <div className="mt-10 max-w-3xl text-center">
               <p className="text-xl text-white/90 font-medium leading-relaxed text-shadow-sm">
                 Reliable, high-quality medical equipment designed for long-term use
               </p>

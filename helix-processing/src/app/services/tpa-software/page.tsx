@@ -19,7 +19,7 @@ export default function TPASoftwarePage() {
                 AI Third-Party Administration <span className="text-violet-200">(TPA)</span> Software
               </h1>
             </div>
-            <div className="mt-6 max-w-3xl text-center">
+            <div className="mt-10 max-w-3xl text-center">
               <p className="text-xl text-white/90 font-medium leading-relaxed text-shadow-sm">
                 Automating third-party administration with advanced artificial intelligence and 24/7 AI customer support
               </p>

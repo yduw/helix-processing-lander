@@ -286,8 +286,13 @@ body {
 }
 
 .footer-gradient {
-  background: linear-gradient(-45deg, #1e1b4b, #2e1065, #312e81, #2e1065, #1e1b4b);
-  box-shadow: inset 0 0 100px rgba(30, 27, 75, 0.3);
+  background: linear-gradient(-45deg, #2e2c84, #4c3396, #4744a5, #4c3396, #2e2c84);
+  box-shadow: inset 0 0 100px rgba(46, 44, 132, 0.3);
+}
+
+.lighter-gradient {
+  background: linear-gradient(-45deg, #312e81, #4338ca, #4f46e5, #4338ca, #312e81);
+  box-shadow: inset 0 0 100px rgba(79, 70, 229, 0.2);
 }
 
 .animated-gradient-bg::before {
