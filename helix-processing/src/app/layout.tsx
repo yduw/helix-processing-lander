@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Helix Processing - Streamlining Care, Empowering Lives.",
-  description: "Healthcare automation services leveraging advanced AI technologies, FDA-compliant medical goods, and DME solutions.",
+  title: "Nova Medical - Quality Care, Empowering Lives.",
+  description: "Healthcare provider offering high-quality durable medical equipment (DME) solutions.",
   // Favicon configuration
   icons: {
     icon: '/favicon.ico',

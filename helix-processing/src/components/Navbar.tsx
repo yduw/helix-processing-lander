@@ -37,13 +37,13 @@ export default function Navbar() {
             <Link href="/" className="flex items-center space-x-2">
               <Image 
                 src="/favicon.ico" 
-                alt="Helix Processing Logo" 
+                alt="Nova Medical Logo" 
                 width={40} 
                 height={40} 
                 className="rounded-full"
               />
               <div className="text-2xl font-extrabold text-white">
-                Helix Processing
+                Nova Medical
               </div>
             </Link>
           </div>
@@ -52,64 +52,12 @@ export default function Navbar() {
               About Us
             </Link>
             
-            {/* Services Dropdown */}
-            <div className="relative group">
-              <button 
-                className="text-white hover:text-indigo-200 font-bold transition-colors nav-link flex items-center"
-                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                onMouseEnter={() => setIsServicesDropdownOpen(true)}
-              >
-                Services
-                <svg 
-                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              <div 
-                className={`absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-indigo-900/90 backdrop-blur-md border border-indigo-700/50 overflow-hidden z-50 transition-opacity duration-150 ${isServicesDropdownOpen ? 'opacity-100' : 'opacity-0 invisible'}`}
-                onMouseEnter={() => setIsServicesDropdownOpen(true)}
-                onMouseLeave={() => {
-                  // Add a delay before closing the dropdown
-                  setTimeout(() => {
-                    if (!document.querySelector('.services-dropdown:hover')) {
-                      setIsServicesDropdownOpen(false);
-                    }
-                  }, 300);
-                }}
-              >
-                <div className="py-1 services-dropdown">
-                  <Link 
-                    href="/services/fda-medical-products" 
-                    className="block px-4 py-3 text-base font-bold text-white hover:bg-indigo-800/70 hover:pl-5 transition-all duration-200"
-                  >
-                    FDA-Compliant Medical Products
-                  </Link>
-                  <Link 
-                    href="/services/dme" 
-                    className="block px-4 py-3 text-base font-bold text-white hover:bg-indigo-800/70 hover:pl-5 transition-all duration-200"
-                  >
-                    Nova Durable Medical Equipment
-                  </Link>
-                  <Link 
-                    href="/services/tpa-software" 
-                    className="block px-4 py-3 text-base font-bold text-white hover:bg-indigo-800/70 hover:pl-5 transition-all duration-200"
-                  >
-                    Nova TPA Software
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Link href="/services/dme" className="text-white hover:text-indigo-200 font-bold transition-colors nav-link">
+              DME Products
+            </Link>
             
             <Link href="/locations" className="text-white hover:text-indigo-200 font-bold transition-colors nav-link">
               Contact
-            </Link>
-            <Link href="/portal" className="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white footer-gradient hover:opacity-90 transition-all duration-200 hover:scale-105 hover:shadow-md">
-              Client Portal
             </Link>
           </div>
           <div className="flex items-center sm:hidden">
@@ -147,27 +95,12 @@ export default function Navbar() {
             About Us
           </Link>
           
-          {/* Services Section */}
-          <div className="py-1 border-t border-white/20">
-            <div className="px-3 py-2 text-base font-bold text-white">
-              Services
-            </div>
-            <Link href="/services/fda-medical-products" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
-              FDA-Compliant Medical Products
-            </Link>
-            <Link href="/services/dme" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
-              Nova Durable Medical Equipment
-            </Link>
-            <Link href="/services/tpa-software" className="block px-5 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-6 transition-all duration-200">
-              Nova TPA Software
-            </Link>
-          </div>
+          <Link href="/services/dme" className="block px-3 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-4 transition-all duration-200 border-t border-white/20">
+            DME Products
+          </Link>
           
           <Link href="/locations" className="block px-3 py-2 text-base font-bold text-white hover:text-indigo-200 hover:pl-4 transition-all duration-200 border-t border-white/10">
             Contact
-          </Link>
-          <Link href="/portal" className="block mx-3 my-2 px-3 py-2 text-base font-bold text-white footer-gradient hover:opacity-90 rounded-full text-center transition-all duration-200 hover:shadow-md">
-            Client Portal
           </Link>
         </div>
       </div>
