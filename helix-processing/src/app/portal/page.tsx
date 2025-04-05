@@ -19,21 +19,21 @@ export default function PatientPortalPage() {
     <div className="min-h-screen pattern-background pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Patient Payment Portal</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Patient Portal</h1>
           <p className="text-xl text-gray-600">
-            Access your account, view invoices, and make payments securely.
+            Access your account, view medical records, and manage insurance securely.
           </p>
         </div>
         
         <div className="max-w-md mx-auto">
           {/* Login Form */}
           <div className="blur-card rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Sign In to Pay Your Bill</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Sign In</h2>
             
             {formStatus === 'success' ? (
               <div className="rounded-lg bg-green-50 p-6 border border-green-200 text-center">
                 <h3 className="text-lg font-medium text-green-800 mb-2">Login Successful!</h3>
-                <p className="text-green-700">Redirecting you to your billing dashboard...</p>
+                <p className="text-green-700">Redirecting you to your patient dashboard...</p>
                 <button 
                   onClick={() => setFormStatus('')}
                   className="mt-4 px-4 py-2 bg-green-100 text-green-800 rounded-md hover:bg-green-200 transition-colors"

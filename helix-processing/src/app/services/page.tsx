@@ -91,7 +91,7 @@ export default function ServicesPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-gray-700 font-medium">Comprehensive range of mobility aids, hospital beds, and respiratory equipment</p>
+                  <p className="ml-3 text-gray-700 font-medium">Comprehensive range of mobility aids, hospital beds, and orthopedic support equipment</p>
                 </div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 text-pink-600">

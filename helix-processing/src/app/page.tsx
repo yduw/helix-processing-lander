@@ -4,20 +4,25 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import PatientCounter from "@/components/PatientCounter";
+import USMapWrapper from "@/components/USMapWrapper";
 
 // Slideshow images array
 const slideshowImages = [
   {
-    src: "/images/slideshow-image1.jpg",
+    src: "/images/slideshow/slideshow-1.jpg",
     alt: "Medical equipment for patient care"
   },
   {
-    src: "/images/slideshow-image2.jpg",
+    src: "/images/slideshow/slideshow-2.jpg",
     alt: "Healthcare professional with equipment"
   },
   {
-    src: "/images/slideshow-image3.jpg",
+    src: "/images/slideshow/slideshow-3.jpg",
     alt: "Modern medical facility"
+  },
+  {
+    src: "/images/slideshow/slideshow-4.jpg",
+    alt: "Patient receiving care with medical equipment"
   }
 ];
 
@@ -25,14 +30,25 @@ export default function Home() {
   // State for current slide index
   const [currentSlide, setCurrentSlide] = useState(0);
   
+  // State to track if a transition is in progress
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  
   // Auto-advance slideshow
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slideshowImages.length);
-    }, 5000);
+      if (!isTransitioning) {
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentSlide((prevSlide) => (prevSlide + 1) % slideshowImages.length);
+          setTimeout(() => {
+            setIsTransitioning(false);
+          }, 2000); // Wait for transition to complete (2 seconds)
+        }, 100); // Small delay before starting transition
+      }
+    }, 8000); // Longer interval to account for extended transition duration
     
     return () => clearInterval(slideInterval);
-  }, []);
+  }, [isTransitioning]);
   
   return (
     <>
@@ -44,38 +60,49 @@ export default function Home() {
           {slideshowImages.map((image, index) => (
             <div 
               key={index}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              className={`absolute inset-0 w-full h-full transition-all duration-2000 ease-in-out ${
+                index === currentSlide 
+                  ? 'opacity-100 translate-x-0' 
+                  : index < currentSlide || (currentSlide === 0 && index === slideshowImages.length - 1)
+                    ? 'opacity-0 -translate-x-full' 
+                    : 'opacity-0 translate-x-full'
               }`}
             >
-              {/* Image */}
-              <div className="relative h-full">
-                <Image 
-                  src={image.src} 
-                  alt={image.alt}
-                  fill
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
-                  priority={index === 0}
-                />
-                {/* Bright, blur gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-teal-500/20 backdrop-filter backdrop-blur-[2px]"></div>
+              {/* Image with gradient background - right aligned */}
+              <div className="relative h-full w-full flex">
+                {/* Left gradient background */}
+                <div className="w-1/2 h-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300"></div>
+                
+                {/* Right image container */}
+                <div className="w-1/2 h-full relative">
+                  <Image 
+                    src={image.src} 
+                    alt={image.alt}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center left' }}
+                    priority={index === 0}
+                  />
+                </div>
+                
+                {/* Subtle overlay connecting gradient and image */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-400/40 to-transparent"></div>
               </div>
             </div>
           ))}
           
-          {/* Content container */}
+          {/* Content container - positioned on left side */}
           <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <div className="max-w-2xl">
+            <div className="w-full px-4 sm:px-10 lg:px-16">
+              <div className="max-w-xl ml-0 md:ml-8 lg:ml-16">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-md mb-4">
                   Enhancing Patient Care Through Innovation
                 </h1>
-                <p className="text-xl md:text-2xl text-white/90 drop-shadow-sm mb-8 max-w-xl">
+                <p className="text-xl md:text-2xl text-white/90 drop-shadow-sm mb-8 max-w-xl font-bold">
                   Empowering healthcare providers with exceptional medical equipment solutions.
                 </p>
                 
                 {/* Patient Counter */}
-                <div className="mb-8 blur-card py-4 px-6 rounded-lg inline-flex items-center shadow-md">
+                <div className="mb-8 bg-white/90 backdrop-blur-sm py-4 px-6 rounded-lg inline-flex items-center shadow-md">
                   <div className="text-blue-600 font-bold mr-2 text-2xl md:text-3xl">
                     <PatientCounter startValue={215782} />
                   </div>
@@ -86,13 +113,13 @@ export default function Home() {
                 <div className="flex flex-wrap gap-4">
                   <Link 
                     href="/services/dme" 
-                    className="px-6 py-3 nova-gradient text-white font-bold rounded-md button-hover pulse-on-hover"
+                    className="px-6 py-3 bg-white text-blue-600 font-bold rounded-md button-hover pulse-on-hover shadow-md"
                   >
                     Our DME Products
                   </Link>
                   <Link 
                     href="/locations" 
-                    className="px-6 py-3 blur-card text-blue-600 font-bold rounded-md button-hover"
+                    className="px-6 py-3 border-2 border-white text-white font-bold rounded-md button-hover"
                   >
                     Contact Us
                   </Link>
@@ -164,6 +191,19 @@ export default function Home() {
               </p>
             </div>
           </div>
+          
+          {/* U.S. Map Component - States with Nova Medical Insurance Coverage */}
+          <div className="mt-16 max-w-5xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold text-center mb-8">
+              Nova Medical insurance coverage across <span className="text-blue-600">35 states</span> and growing
+            </h3>
+            <div className="blur-card rounded-xl p-6 md:p-10 shadow-md">
+              <USMapWrapper />
+            </div>
+            <p className="text-center text-gray-600 mt-4 text-sm">
+              Hover over highlighted states to see our insurance coverage details
+            </p>
+          </div>
         </div>
       </section>
       
@@ -197,7 +237,7 @@ export default function Home() {
                 Nova Durable Medical Equipment (DME)
               </h3>
               <p className="text-gray-600 mb-6">
-                Our comprehensive FDA-compliant DME solutions include mobility aids, hospital beds, respiratory equipment, and more. Each product is designed with patient comfort, safety, and care in mind, helping healthcare providers deliver the best possible outcomes.
+                Our comprehensive FDA-compliant DME solutions include mobility aids, hospital beds, orthopedic supports, and more. Each product is designed with patient comfort, safety, and care in mind, helping healthcare providers deliver the best possible outcomes.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">

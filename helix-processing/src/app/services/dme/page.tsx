@@ -13,7 +13,7 @@ export default function DmePage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
         </svg>
       ),
-      image: "/images/service-card-pictures/dme.jpg",
+      image: "/images/dme-categories/home-medical.jpg",
       products: [
         "Hospital Beds",
         "Overbed Tables",
@@ -31,7 +31,7 @@ export default function DmePage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
         </svg>
       ),
-      image: "/images/service-card-pictures/dme.jpg",
+      image: "/images/dme-categories/mobility.jpg",
       products: [
         "Manual Wheelchairs",
         "Power Wheelchairs",
@@ -50,7 +50,7 @@ export default function DmePage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
         </svg>
       ),
-      image: "/images/service-card-pictures/dme.jpg",
+      image: "/images/dme-categories/therapy.jpg",
       products: [
         "TENS Units",
         "Lymphedema Pumps",
@@ -68,7 +68,7 @@ export default function DmePage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
       ),
-      image: "/images/service-card-pictures/dme.jpg",
+      image: "/images/dme-categories/orthopedic.jpg",
       products: [
         "Knee Braces",
         "Back Braces",
@@ -87,7 +87,7 @@ export default function DmePage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
         </svg>
       ),
-      image: "/images/service-card-pictures/dme.jpg",
+      image: "/images/dme-categories/bathroom.jpg",
       products: [
         "Shower Chairs",
         "Bath Benches",
@@ -105,7 +105,7 @@ export default function DmePage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
         </svg>
       ),
-      image: "/images/service-card-pictures/dme.jpg",
+      image: "/images/dme-categories/maternity.jpg",
       products: [
         "Breast Pumps",
         "Maternity Support Belts",
@@ -166,10 +166,10 @@ export default function DmePage() {
             <div className="lg:w-1/2">
               <div className="relative h-96 w-full blur-card rounded-2xl overflow-hidden shadow-xl">
                 <Image 
-                  src="/images/service-card-pictures/dme.jpg"
+                  src="/images/hero/hero-dme.jpg"
                   alt="Durable Medical Equipment"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  style={{ objectFit: 'contain', objectPosition: 'center' }}
                   className="rounded-2xl"
                 />
               </div>
@@ -207,7 +207,7 @@ export default function DmePage() {
                       src={category.image}
                       alt={category.title}
                       fill
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain', objectPosition: 'center' }}
                       className="rounded-lg"
                     />
                   </div>
