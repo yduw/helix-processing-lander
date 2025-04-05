@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Nova Medical - Quality Care, Empowering Lives.",
-  description: "Healthcare provider offering high-quality durable medical equipment (DME) solutions.",
+  description: "Healthcare provider offering FDA-compliant, high-quality durable medical equipment (DME) solutions.",
   // Favicon configuration
   icons: {
     icon: '/favicon.ico',
